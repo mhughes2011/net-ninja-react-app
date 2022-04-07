@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './App.css';
 
 function App() {
-  let name = 'mario'
+  const [name, setName] = useState('mario')
   
   const handleNameChange = () => {
-    name = 'luigi'
-    console.log(`The value of name is ${name}`)
+    const userName = prompt('Give me your name...')
+    setName(userName)
+    console.log(`The value of name is ${userName}`)
   }
 
   return (
