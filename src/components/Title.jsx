@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Title() {
+function Title({titleProp, subtitleProp}) {
   return (
     <div>
-      <h1 className="title">Mario Kingom Events</h1>
+      <h1 className="title">{titleProp}</h1>
       <br />
-      <h2 className="subtitle">All the latest events in mario kingdom</h2>
+      <h2 className="subtitle">{subtitleProp}</h2>
     </div>
   )
 }

@@ -10,6 +10,8 @@ function App() {
     {title: 'bowsers live stream', id: 2},
     {title: 'race on moo moo farm', id: 3}
   ])
+
+  const subtitle='All the latest events in Marioland'
   
   const handleClick = (item) => {
     setEvents(events.filter((e) => e.id !== item.id))
@@ -17,7 +19,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Title />
+      <Title titleProp='Events in Your Area' subtitleProp={subtitle} />
+      <Title titleProp='another title' subtitleProp='another subtitle' />
       
       {showEvents && (
         <div>
