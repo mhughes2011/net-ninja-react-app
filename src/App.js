@@ -20,7 +20,6 @@ function App() {
   return (
     <div className='App'>
       <Title titleProp='Events in Your Area' subtitleProp={subtitle} />
-      <Title titleProp='another title' subtitleProp='another subtitle' />
       
       {showEvents && (
         <div>
@@ -34,10 +33,10 @@ function App() {
       )}
       {/* You always get access to index when dealing with array methods */}
       {showEvents && events.map((item, index) => (
-        <div key={item.id}>
+        <React.Fragment key={item.id}>
           <h2>{index} - {item.title}</h2>
           <button onClick={() => handleClick(item)}>Delete Event</button>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );
