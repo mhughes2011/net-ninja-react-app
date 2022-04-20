@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './App.css';
 
-import Title from './components/Title';
+import Title from './components/Title'
+import Modal from './components/Modal'
 
 function App() {
   const [showEvents, setShowEvents] = useState(true)
@@ -38,6 +39,18 @@ function App() {
           <button onClick={() => handleClick(item)}>Delete Event</button>
         </React.Fragment>
       ))}
+
+
+      {/* <Modal>
+        <h2>35% Off Coupon Code!</h2>
+        <p>Use the code NINJA20 at the checkout.</p>
+      </Modal> */}
+
+      <Modal>
+        <h2>Terms and Conditions</h2>
+        <p>Lorem Ipsum</p>
+        <a href="/">find out more...</a>
+      </Modal>
     </div>
   );
 }
