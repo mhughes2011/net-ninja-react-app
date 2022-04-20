@@ -5,12 +5,17 @@ import Title from './components/Title'
 import Modal from './components/Modal'
 
 function App() {
+  const [showModal, setShowModal] = useState(true)
   const [showEvents, setShowEvents] = useState(true)
   const [events, setEvents] = useState([
     {title: 'marios birthday bash', id: 1},
     {title: 'bowsers live stream', id: 2},
     {title: 'race on moo moo farm', id: 3}
   ])
+
+  const handleClose = () => {
+    setShowModal(false)
+  }
 
   const subtitle='All the latest events in Marioland'
   
@@ -46,11 +51,13 @@ function App() {
         <p>Use the code NINJA20 at the checkout.</p>
       </Modal> */}
 
-      <Modal>
-        <h2>Terms and Conditions</h2>
-        <p>Lorem Ipsum</p>
-        <a href="/">find out more...</a>
-      </Modal>
+      {showModal && 
+        <Modal handleClose={handleClose}>
+          <h2>Terms and Conditions</h2>
+          <p>Lorem Ipsum</p>
+          <a href="/">find out more...</a>
+        </Modal>
+      }
     </div>
   );
 }
