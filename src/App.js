@@ -5,7 +5,7 @@ import Title from './components/Title'
 import Modal from './components/Modal'
 
 function App() {
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
   const [events, setEvents] = useState([
     {title: 'marios birthday bash', id: 1},
@@ -15,6 +15,10 @@ function App() {
 
   const handleClose = () => {
     setShowModal(false)
+  }
+
+  const openModal = () => {
+    setShowModal(true)
   }
 
   const subtitle='All the latest events in Marioland'
@@ -50,6 +54,9 @@ function App() {
         <h2>35% Off Coupon Code!</h2>
         <p>Use the code NINJA20 at the checkout.</p>
       </Modal> */}
+      <div>
+        <button onClick={openModal}>Show Modal</button>
+      </div>
 
       {showModal && 
         <Modal handleClose={handleClose}>
