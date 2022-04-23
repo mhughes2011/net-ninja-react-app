@@ -62,7 +62,6 @@ function App() {
         <Modal handleClose={handleClose}>
           <h2>Terms and Conditions</h2>
           <p>Lorem Ipsum</p>
-          <a href="/">find out more...</a>
         </Modal>
       }
     </div>
