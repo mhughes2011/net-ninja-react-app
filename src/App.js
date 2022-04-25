@@ -3,6 +3,7 @@ import './App.css';
 
 import Title from './components/Title'
 import Modal from './components/Modal'
+import EventList from './components/EventList'
 
 function App() {
   const [showModal, setShowModal] = useState(false)
@@ -23,8 +24,12 @@ function App() {
 
   const subtitle='All the latest events in Marioland'
   
-  const handleClick = (item) => {
-    setEvents(events.filter((e) => e.id !== item.id))
+  const handleClick = (id) => {
+    setEvents((prevEvents) => {
+      return prevEvents.filter((e) => {
+        return id !== e.id
+      })
+    })
   }
 
   return (
@@ -42,12 +47,7 @@ function App() {
         </div>
       )}
       {/* You always get access to index when dealing with array methods */}
-      {showEvents && events.map((item, index) => (
-        <React.Fragment key={item.id}>
-          <h2>{index} - {item.title}</h2>
-          <button onClick={() => handleClick(item)}>Delete Event</button>
-        </React.Fragment>
-      ))}
+      {showEvents && <EventList events={events} handleClick={handleClick}/>}
 
 
       {/* <Modal>
