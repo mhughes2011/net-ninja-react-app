@@ -8,7 +8,8 @@ function Modal(props) {
     {/* The inline style tag below needs to curly brackets, the first set to notify of dynamic content and the second set for a JS object, like normal CSS */}
       <div className="modal" style={{
         border:'4px solid',
-        borderColor: '#ff4500',
+        // Conditional CSS classes like below can use the ternary operator without curly brackets
+        borderColor: props.isSalesModal ? '#ff4500' : '#555', 
         textAlign: 'center'
       }}>
         {props.children}
